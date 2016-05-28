@@ -1,8 +1,9 @@
 <div class="row">
     <div class="col s12 m12">
-        <div class="card-panel center-align">
-            <h1>{{title}}</h1>
-            <h2>My Ninjas</h2>
+        <div class="card-panel teal center-align">
+            <span class="white-text">
+                <h2>My Ninjas</h2>
+            </span>
         </div>
     </div>
 </div>
@@ -15,4 +16,17 @@
             </li>
         </ul>    
     </div>  
-    <my-ninja-detail [ninja]="selectedNinja"></my-ninja-detail>
+    
+    <div *ngIf="selectedNinja">
+        <h2>
+        {{selectedNinja.name | uppercase}} is my ninja
+        </h2>
+        <a (click)="gotoDetail()" class="waves-effect waves-light btn">View Details</a>
+    </div>  
+    
+    <div *ngIf="!selectedNinja">
+        <h2>
+            No ninja selected :(
+        </h2>
+    </div>  
+</div>

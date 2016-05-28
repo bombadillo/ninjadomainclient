@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { RouteParams } from '@angular/router-deprecated';
 import { Ninja } from './ninja';
+import { NinjaService } from './ninja.service';
 
 @Component({
   selector: 'my-ninja-detail',
@@ -7,6 +9,22 @@ import { Ninja } from './ninja';
 })
 
 export class NinjaDetailComponent {
+  
+    constructor(
+      private ninjaService: NinjaService,
+      private routeParams: RouteParams) {
+    }  
+    
+    ngOnInit() {
+      let id = +this.routeParams.get('id');
+      this.ninjaService.getNinja(id)
+        .then(ninja => this.ninja = ninja);
+    }    
+    
+    goBack() {
+      window.history.back();
+    }    
+  
     @Input()
     ninja: Ninja;
 }

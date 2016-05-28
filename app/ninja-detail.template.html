@@ -1,15 +1,23 @@
 <div *ngIf="ninja">
-    <div class="col s12 m5">
-        <div class="card-panel">
-        <span>
-            <h2>{{ninja.name}} details!</h2>
-            <div class="chip">
-            <b>ID</b> {{ninja.id}}
-            </div>                            
-            <div class="input-field">                
-            <input [(ngModel)]="ninja.name" placeholder="name">
-            </div>            
-        </span>
+    <div class="row">
+        <div class="col s5 offset-s3">
+            <div class="card-panel">
+            <span>
+                <h2>{{ninja.name}} details!</h2>
+                <div class="chip">
+                <b>ID</b> {{ninja.id}}
+                </div>                            
+                <div class="input-field">                
+                <input [(ngModel)]="ninja.name" placeholder="name">
+                </div>            
+            </span>
+            </div>
+        </div>       
+    </div>
+    
+    <div class="row">
+        <div class="col s5 offset-s3">
+            <a (click)="goBack()" class="waves-effect waves-light btn">Back</a>
         </div>
-    </div>   
+    </div>
 </div>  
