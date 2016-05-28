@@ -1,31 +1,17 @@
-import { Component } from '@angular/core';
-import { Ninja } from './ninja';
-import { NinjaDetailComponent } from './ninja-detail.component';
-import { NinjaService } from './ninja.service'
-
+import { Component }       from '@angular/core';
+import { NinjaService }     from './ninja.service';
+import { NinjasComponent } from './ninjas.component';
 @Component({
   selector: 'my-app',
-  templateUrl: '/app/app-template.html',
-  directives: [NinjaDetailComponent],
-  providers: [NinjaService]
+  template: `
+    <h1>{{title}}</h1>
+    <my-ninjas></my-ninjas>
+  `,
+  directives: [NinjasComponent],
+  providers: [
+    NinjaService
+  ]
 })
-
 export class AppComponent {
   title = 'Tour of Ninjas';
-  selectedNinja: Ninja;
-  ninjas = [];
-  
-  constructor(private ninjaService: NinjaService) { }
-  
-  getNinjas() {
-    this.ninjaService.getNinjas().then(ninjas => this.ninjas = ninjas)
-  }
-  
-  ngOnInit() {
-    this.getNinjas()
-  }
-  
-  onSelect(ninja: Ninja) { 
-    this.selectedNinja = ninja; 
-  }
- }
+}
