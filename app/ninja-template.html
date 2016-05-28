@@ -12,7 +12,7 @@
     <div class="col s12 m5">
         <ul class="ninjas collection">
             <li *ngFor="let ninja of ninjas" (click)="onSelect(ninja)" [class.active]="ninja === selectedNinja" class="collection-item">
-            <span class="badge">{{ninja.id}}</span> {{ninja.name}}
+            <span class="badge" [class.white-text]="ninja === selectedNinja">{{ninja.id}}</span> {{ninja.name}}
             </li>
         </ul>    
     </div>  
