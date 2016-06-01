@@ -2,13 +2,14 @@
   <div class="col s12 center-align">
     <h3>Top Ninjas</h3>
     <div class="grid grid-pad">
-      <div *ngFor="let ninja of ninjas" (click)="gotoDetail(ninja)" class="col-1-4">
+      <div *ngFor="let ninja of ninjas" class="col-1-4">
         
         <div class="row">
           <div class="col s6 offset-s3">
             <div class="card-panel teal">
               <span class="white-text">
                 <h4>{{ninja.name}}</h4>
+                <a [routerLink]="['NinjaDetail', {id: ninja.id}]" class="waves-effect waves-light btn">View Detail</a>
               </span>
             </div>
           </div>

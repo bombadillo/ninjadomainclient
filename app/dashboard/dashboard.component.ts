@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { Ninja }     from '../ninja/ninja';
 import { NinjaService }     from '../ninja/ninja.service';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: '/app/dashboard/dashboard.template.html'
+  templateUrl: '/app/dashboard/dashboard.template.html',
+  directives: [ROUTER_DIRECTIVES]
 })
 
 export class DashboardComponent implements OnInit { 
     ninjas: Ninja[] = [];
     
     constructor(
-        private router: Router,
         private ninjaService: NinjaService) {
-            
          }
     
     ngOnInit() {
@@ -24,9 +23,4 @@ export class DashboardComponent implements OnInit {
             error => console.log(error)
             )        
     }
-    
-    gotoDetail(ninja: Ninja){
-        let link = ['NinjaDetail', { id: ninja.id }];
-        this.router.navigate(link);        
-    }    
 }
