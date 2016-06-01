@@ -1,8 +1,8 @@
 import { Component }       from '@angular/core';
-import { NinjaService }     from './ninja.service';
-import { NinjasComponent } from './ninjas.component';
-import { NinjaDetailComponent } from './ninja-detail.component';
-import { DashboardComponent } from './dashboard.component';
+import { NinjaService }     from './ninja/ninja.service';
+import { NinjasComponent } from './ninja/ninjas.component';
+import { NinjaDetailComponent } from './ninja/ninja-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 @Component({
@@ -17,7 +17,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 
 @RouteConfig([
   {
-    path: '/ninjas',
+    path: '/ninja/ninjas',
     name: 'Ninjas',
     component: NinjasComponent
   },

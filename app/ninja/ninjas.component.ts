@@ -6,7 +6,7 @@ import { NinjaService } from './ninja.service'
 
 @Component({
   selector: 'my-ninjas',
-  templateUrl: '/app/ninja-template.html'
+  templateUrl: '/app/ninja/ninja-template.html'
 })
 
 export class NinjasComponent implements OnInit {

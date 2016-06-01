@@ -5,7 +5,7 @@ import { NinjaService } from './ninja.service';
 
 @Component({
   selector: 'my-ninja-detail',
-  templateUrl: '/app/ninja-detail.template.html'
+  templateUrl: '/app/ninja/ninja-detail.template.html'
 })
 
 export class NinjaDetailComponent implements OnInit {

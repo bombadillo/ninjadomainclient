@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
-import { Ninja }     from './ninja';
-import { NinjaService }     from './ninja.service';
+import { Ninja }     from '../ninja/ninja';
+import { NinjaService }     from '../ninja/ninja.service';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: '/app/dashboard.template.html'
+  templateUrl: '/app/dashboard/dashboard.template.html'
 })
 
 export class DashboardComponent implements OnInit { 
