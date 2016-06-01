@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
-import { Ninja }     from '../ninja/ninja';
+import { Ninja }     from '../ninja/models/ninja';
 import { NinjaService }     from '../ninja/services/ninja.service';
 
 @Component({
