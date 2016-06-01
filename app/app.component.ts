@@ -20,7 +20,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 
 @RouteConfig([
   {
-    path: '/ninja/ninjas',
+    path: '/ninjas',
     name: 'Ninjas',
     component: NinjasComponent
   },
@@ -31,7 +31,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
     useAsDefault: true
   },
   {
-    path: '/detail/:id',
+    path: '/ninjas/:id',
     name: 'NinjaDetail',
     component: NinjaDetailComponent
   }
