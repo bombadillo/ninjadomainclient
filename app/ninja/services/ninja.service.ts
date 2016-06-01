@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http'
 import { Observable } from 'rxjs/Observable'
 
-import { NINJAS } from './mock-ninjas';
-import { Ninja } from './ninja'
+import { Ninja } from '../ninja'
 
 @Injectable()
 export class NinjaService {
@@ -19,9 +18,9 @@ export class NinjaService {
                    .do(data => console.log(data));
     }
     
-    getNinja(id: number) {
-        return Promise.resolve(NINJAS).then(
-            ninjas => ninjas.filter(ninja => ninja.id === id)[0]
-        );
+    getNinja(id: number): Observable<Ninja> {
+        return this.http.get(this.productUrl)
+                   .map((response: Response) => <Ninja> response.json().filter(ninja => ninja.id === id)[0])
+                   .do(data => console.log(data));        
     }    
 }

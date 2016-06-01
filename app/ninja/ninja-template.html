@@ -21,7 +21,7 @@
         <h2>
         {{selectedNinja.name | uppercase}} is my ninja
         </h2>
-        <a (click)="gotoDetail()" class="waves-effect waves-light btn">View Details</a>
+        <a [routerLink]="['NinjaDetail', {id: selectedNinja.id}]" class="waves-effect waves-light btn">View Details</a>
     </div>  
     
     <div *ngIf="!selectedNinja">

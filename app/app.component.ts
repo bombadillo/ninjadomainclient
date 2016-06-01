@@ -1,9 +1,9 @@
 import { Component }       from '@angular/core';
 import { HTTP_PROVIDERS } from "@angular/http"
 import 'rxjs/Rx'
-import { NinjaService }     from './ninja/ninja.service';
+import { NinjaService }     from './ninja/services/ninja.service';
 import { NinjasComponent } from './ninja/ninjas.component';
-import { NinjaDetailComponent } from './ninja/ninja-detail.component';
+import { NinjaDetailComponent } from './ninja/detail/ninja-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 

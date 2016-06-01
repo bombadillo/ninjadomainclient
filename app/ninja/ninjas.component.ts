@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { Ninja } from './ninja';
-import { NinjaDetailComponent } from './ninja-detail.component';
-import { NinjaService } from './ninja.service'
+import { NinjaService } from './services/ninja.service'
 
 @Component({
   selector: 'my-ninjas',
-  templateUrl: '/app/ninja/ninja-template.html'
+  templateUrl: '/app/ninja/ninja-template.html',
+  directives: [ROUTER_DIRECTIVES]
 })
 
 export class NinjasComponent implements OnInit {
@@ -15,7 +15,6 @@ export class NinjasComponent implements OnInit {
   ninjas = [];
   
   constructor(
-    private router: Router,
     private ninjaService: NinjaService) {       
     }
   
@@ -34,8 +33,4 @@ export class NinjasComponent implements OnInit {
   onSelect(ninja: Ninja) { 
     this.selectedNinja = ninja; 
   }
-  
-  gotoDetail() {
-    this.router.navigate(['NinjaDetail', { id: this.selectedNinja.id }]);
-  }  
  }
