@@ -20,7 +20,11 @@ export class NinjasComponent implements OnInit {
     }
   
   getNinjas() {
-    this.ninjaService.getNinjas().then(ninjas => this.ninjas = ninjas)
+    this.ninjaService.getNinjas()
+        .subscribe(
+          ninjas => this.ninjas = ninjas,
+          error => console.log(error)
+         )
   }
   
   ngOnInit() {

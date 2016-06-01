@@ -19,7 +19,10 @@ export class DashboardComponent implements OnInit {
     
     ngOnInit() {
         this.ninjaService.getNinjas()
-        .then(ninjas => this.ninjas = ninjas.slice(1,5));
+            .subscribe(
+            ninjas => this.ninjas = ninjas.slice(1,5),
+            error => console.log(error)
+            )        
     }
     
     gotoDetail(ninja: Ninja){
