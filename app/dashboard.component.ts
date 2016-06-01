@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 import { Ninja }     from './ninja';
 import { NinjaService }     from './ninja.service';
@@ -8,7 +8,7 @@ import { NinjaService }     from './ninja.service';
   templateUrl: '/app/dashboard.template.html'
 })
 
-export class DashboardComponent { 
+export class DashboardComponent implements OnInit { 
     ninjas: Ninja[] = [];
     
     constructor(

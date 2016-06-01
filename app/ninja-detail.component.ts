@@ -8,7 +8,7 @@ import { NinjaService } from './ninja.service';
   templateUrl: '/app/ninja-detail.template.html'
 })
 
-export class NinjaDetailComponent {
+export class NinjaDetailComponent implements OnInit {
   
     constructor(
       private ninjaService: NinjaService,

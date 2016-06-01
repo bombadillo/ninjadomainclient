@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 import { Ninja } from './ninja';
 import { NinjaDetailComponent } from './ninja-detail.component';
@@ -9,7 +9,7 @@ import { NinjaService } from './ninja.service'
   templateUrl: '/app/ninja-template.html'
 })
 
-export class NinjasComponent {
+export class NinjasComponent implements OnInit {
   title = 'Tour of Ninjas';
   selectedNinja: Ninja;
   ninjas = [];
